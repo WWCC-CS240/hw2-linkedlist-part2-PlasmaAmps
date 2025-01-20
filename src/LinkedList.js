@@ -35,7 +35,7 @@ class LinkedList {
     // Get the value at a specific index
   get(index) {
     if (index < 0) {
-      return null; // Invalid index
+      throw new Error('Index must be a non-negative integer'); // Throw an exception for negative index
     }
     let current = this.head;
     let count = 0;
@@ -47,7 +47,7 @@ class LinkedList {
       current = current.next;
       count++;
     }
-    return null; // Index out of bounds
+    throw new Error('Index out of bounds'); // Throw an exception if index exceeds list size
   }
 
   // Find the index of the first node with the given value
